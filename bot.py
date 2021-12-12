@@ -6,17 +6,17 @@ from instaloader import Instaloader, Profile
 import time
 
 
-'''Coded by Anish Gowda 😃😃😃😃'''
+'''Coded by Jocker 😃😃😃😃'''
 L = Instaloader()
 TOKEN = os.getenv("BOT_TOKEN")
 APP_NAME = os.getenv("APP_NAME")
 TELEGRAM_USERNAME = os.getenv("TELEGRAM_USERNAME")
 
-START_MSG = '''*Welcome To the Bot🖐🖐*
+START_MSG = '''*Welcome To the Bot🖐🖐 , Load Insta Dp Using This Bot*
 
 _Send me anyones instagram username to get their DP_
 
-*ex :* `mrk_yt_`...., *etc*'''
+*ex :* `jOcker_bot_dev`...., *etc*'''
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -39,7 +39,7 @@ def start(update, context):
     update.message.reply_text(
         START_MSG,
         parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("How To Own & Use", url="https://youtu.be/6AlELqY_w6o")]]))
+                    [[InlineKeyboardButton("Channel", url="https://t.me/ytdofficial")]]))
 
 def help_msg(update, context):
     update.message.reply_text("Enter Your Instagram UserName")
@@ -63,7 +63,7 @@ def username(update, context):
     try:
         user = Profile.from_username(L.context, query)
         caption_msg = f'''♥️*Name*♥️: {user.full_name} \n😁*Followers*😁: {user.followers} \n🤩*Following*🤩: {user.followees}\
-         \n🧐*Account Type*🧐: {acc_type(user.is_private)}\n🤪*Bio🤪*: {user.biography}\n👀*Midia*👀 {user.mediacount} \n\n*Thank You For Using The bot 😀😀*'''
+         \n🧐*Account Type*🧐: {acc_type(user.is_private)}\n🤪*Bio🤪*: {user.biography}\n👀*Midia*👀 {user.mediacount} \n\n*Thank You For Using The bot 😀😀, Check Channel For More Bot*'''
        
         context.bot.send_photo(
             chat_id=chat_id, photo=user.profile_pic_url,
